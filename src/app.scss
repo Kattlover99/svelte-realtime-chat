@@ -1,0 +1,225 @@
+/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,600;1,300&display=swap');
+
+body {
+  background-color: #fff;
+  background-image: url('../static/layered-waves-haikei.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  color: #fff;
+  font-family: Nunito;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#svelte {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main {
+  width: 600px;
+  margin: auto;
+  box-shadow: 0px 0px 20px -10px #000;
+}
+
+header,
+footer {
+  background: #202020;
+  padding: 10px 20px;
+}
+
+header {
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    margin: auto;
+  }
+
+  svg {
+    width: 30px;
+    color: #3ecf8e;
+  }
+
+  .logo {
+    display: flex;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    font-weight: 100;
+
+    svg {
+      margin-left: 5px;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+footer {
+  svg {
+    width: 15px;
+    color: #3ecf8e;
+    margin-right: 5px;
+  }
+
+  .source-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a {
+    color: #3ecf8e;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: #1b1b1b;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  // height: 525px;
+  height: 70vh;
+
+  .chat-window {
+    padding: 20px 20px 20px 30px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.chat-box {
+  margin: 5px 0;
+
+  .message {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    text-align: justify;
+    overflow: hidden;
+
+    &:hover {
+      .reply-btn {
+        display: block !important;
+      }
+    }
+
+    .reply-box {
+      padding: 10px 20px 20px;
+      background: #242424;
+      margin-bottom: -10px;
+      border-radius: 20px;
+      color: #6e6e6e;
+      font-weight: 100;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      span:first-child {
+        margin-bottom: 3px;
+        font-size: 13px;
+      }
+    }
+
+    .message-box {
+      padding: 10px 15px;
+      font-weight: normal;
+      position: relative;
+      word-break: break-all;
+
+      .reply-btn {
+        cursor: pointer;
+        position: absolute;
+        bottom: 7px;
+        right: -40px;
+        width: 30px;
+        background: #6c6c6c;
+        border-radius: 50px;
+        padding: 6px;
+        color: #fff;
+        display: none;
+      }
+    }
+
+    .info {
+      margin: 10px 0;
+      color: #707070;
+
+      .username {
+        font-weight: 600;
+        color: #3ecf8e;
+      }
+    }
+  }
+}
+
+.agent {
+  display: flex;
+
+  .message {
+    align-items: flex-start;
+  }
+
+  .message-box {
+    color: #181818;
+    background: #fff;
+    border-radius: 30px 30px 30px 5px;
+  }
+}
+
+.sender {
+  display: flex;
+  flex-direction: row-reverse;
+
+  .message {
+    align-items: flex-end;
+  }
+
+  .message-box {
+    color: #fff;
+    background: #3ecf8e;
+    border-radius: 30px 30px 5px 30px;
+
+    .reply-btn {
+      left: -40px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  main {
+    margin: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chat-container {
+    border-radius: 0;
+    height: 79vh;
+  }
+}
